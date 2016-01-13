@@ -101,7 +101,7 @@ a:active, a:focus, a:hover {
 /** Boxed
  **************************************************************** **/
 body.boxed {
-	background-color:#f1f2f7;
+	/**background-color:#f1f2f7;*/
 }
 body.boxed section {
 	background-color:#fff;
@@ -2141,7 +2141,10 @@ ul.bullet-list li h3 {
 	margin-top:10%;
 }
 .login-box>form {
-	background-color:#fff;
+	/**background-color:#fff;*/
+    /*background-color:rgba(0, 0, 0, 0);*/
+	opacity:1;
+	filter: alpha(opacity=0);
 }
 
 .forgot-password {

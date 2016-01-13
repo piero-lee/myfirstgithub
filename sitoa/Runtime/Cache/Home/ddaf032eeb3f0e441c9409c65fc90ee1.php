@@ -1,9 +1,9 @@
 <?php if (!defined('THINK_PATH')) exit();?><!doctype html>
-<html lang="zh-CN">
+<html class="no-js" lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>神丰ＯＡ系统</title>
+		<title>神丰ＯＡ系统 - 用户登录</title>
 		<meta name="description" content="" />
 		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
 
@@ -23,11 +23,19 @@
 		<!--雪花特效 START-->
 		<link rel="stylesheet" type="text/css" href="/sitoa/Public/css/snow-normalize.css" />
 		<link rel="stylesheet" type="text/css" href="/sitoa/Public/css/snow-default.css">
+
+		<link rel="stylesheet" type="text/css" href="/sitoa/Public/css/login/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/sitoa/Public/css/login/style1.css" />
+		<script type="text/javascript" src="/sitoa/Public/js/modernizr.custom.86080.js"></script>
+
 		<style type="text/css">
-			body{
+			/**body{
 				background-color: #ACD6FF;
-			}
-		    .snow-container{position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001;}
+			}*/
+            .fontstyle {
+                color:#84C1FF;font-weight: bold;
+            }
+            .snow-container{position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001;}
 		</style>
 		<!--雪花特效 END-->
 
@@ -36,15 +44,23 @@
 		.boxed = boxed version
 	-->
 	<body>
+    <div class="snow-container"></div>
+        <ul class="cb-slideshow">
+            <li><span>Image 01</span><div><h3>ＷＥ·ＡＲＥ·伐木累！</h3></div></li>
+            <li><span>Image 02</span><div><h3>还·有·谁！</h3></div></li>
+            <li><span>Image 03</span><div><h3>东北人在西湖...</h3></div></li>
+            <li><span>Image 04</span><div><h3>哥·俩·好！</h3></div></li>
+            <li><span>Image 05</span><div><h3>我·们·美·吗？！</h3></div></li>
+            <li><span>Image 06</span><div><h3>只想做个·安静·的女子</h3></div></li>
+        </ul>
+    <div class="container">
 
-	<div class="snow-container"></div>
 		<div class="padding-15">
-
 			<div class="login-box">
 
 				<!-- login form -->
 				<form action="index.html" method="post" class="sky-form boxed">
-					<header><i class="fa fa-users"></i> 用户登录</header>
+					<header class="fontstyle" style="font-family:LiSu; font-size: 30px;"><i class="fa fa-users"></i> <strong>用户登录</strong></header>
 
 					<!--
 					<div class="alert alert-danger noborder text-center weight-400 nomargin noradius">
@@ -64,31 +80,39 @@
 					<fieldset>	
 					
 						<section>
-							<label class="label">您的邮箱</label>
+							<label class="label"><div class="fontstyle">您的邮箱</div></label>
 							<label class="input">
 								<i class="icon-append fa fa-envelope"></i>
-								<input type="email">
+								<input type="email" style="BACKGROUND-COLOR: transparent;">
 								<span class="tooltip tooltip-top-right">请输入您的电子邮箱</span>
 							</label>
 						</section>
 						
 						<section>
-							<label class="label">密码</label>
+							<label class="label"><div class="fontstyle">密码</div></label>
 							<label class="input">
 								<i class="icon-append fa fa-lock"></i>
-								<input type="password">
+								<input type="password" style="BACKGROUND-COLOR: transparent;">
 								<b class="tooltip tooltip-top-right">请输入密码</b>
 							</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox-inline" checked><i></i>自动登录</label>
+							<!--<label class="checkbox"><input type="checkbox" checked><i></i>自动登录</label>-->
+                            <label class="switch switch-default switch-round">
+                                <input type="checkbox" value="1">
+                                <span class="switch-label" data-on="YES" data-off="NO"></span>
+                                <i></i><div class="fontstyle" style="display: inline">自动登录</div>
+                            </label>
 						</section>
 
 					</fieldset>
 
 					<footer>
-						<button type="submit" class="btn btn-primary pull-right">登录</button>
+						<!--<button type="submit" class="btn btn-primary pull-right">登录</button>-->
+                        <a href="#" class="btn btn-sm btn-default btn-bordered pull-right">
+                            <span>&nbsp;&nbsp;登录&nbsp;&nbsp;</span>
+                        </a>
 						<div class="forgot-password pull-left">
-							<a href="page-password.html">忘记密码?</a> <br />
-							<a href="page-register.html"><b>注册用户</b></a>
+							<a href="page-password.html" class="fontstyle">忘记密码?</a> <br />
+							<!--<a href="page-register.html"><b>注册用户</b></a>-->
 						</div>
 					</footer>
 				</form>
@@ -102,14 +126,11 @@
 			</div>
 
 		</div>
-		<!--雪花特效 START-->
-
-		<!--雪花特效 END-->
-
+    </div>
 		<!-- JAVASCRIPT FILES -->
-		<!--<script type="text/javascript">var plugin_path = '/sitoa/Public/plugins/';</script>
+		<script type="text/javascript">var plugin_path = '/sitoa/Public/plugins/';</script>
 		<script type="text/javascript" src="/sitoa/Public/plugins/jquery/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="/sitoa/Public/js/app.js"></script>-->
+		<script type="text/javascript" src="/sitoa/Public/js/app.js"></script>
 
 		<!--雪花特效 START-->
 		<script type="text/javascript" src="/sitoa/Public/js/snow-jquery-2.1.1.min.js"></script>

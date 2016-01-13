@@ -9116,12 +9116,12 @@ section.dark h2.owl-featured {
 }
 .sky-form header {
 	margin:0;
-	background: #F5F5F5;
+	/**background: #F5F5F5;
 	background-color: transparent;
 	background: -webkit-linear-gradient(top, white 1%, #f9f9f9 98%) repeat scroll 0 0 transparent;
 	background: linear-gradient(to bottom, white 1%, #f9f9f9 98%) repeat scroll 0 0 transparent;
 	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;*/
 	border-bottom:rgba(0,0,0,0.07) 1px solid;
 
 	padding:15px 20px;
