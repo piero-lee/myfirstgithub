@@ -19,4 +19,16 @@ return array(
     'MODULE_ALLOW_LIST'    =>    array('Home','Admin','User'),
     'DEFAULT_MODULE'       =>    'Home',  // 默认模块
     //-------------------为了隐藏URL里的模块（HOME）--------------------------------
+
+
+    //--------------------DB环境变量---------------------------
+    //数据库连接参数
+    'DB_TYPE'=>'mysql',
+    'DB_HOST' => 'localhost',
+    'DB_USER' => 'root',
+    'DB_PWD' => '123456',
+    'DB_NAME' => 'sitsys',
+    'DB_PORT' => '3306',
+    'DB_PREFIX' => 'sit_'
+    //--------------------DB环境变量---------------------------
 );

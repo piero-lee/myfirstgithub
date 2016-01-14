@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>{$title|default=get_system_config("system_name")}</title>
+    <meta name="description" content="" />
+
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+    <!-- WEB FONTS -->
+    <link href="http://fonts.useso.com/css?family=Open+Sans:300,400,700,800&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CORE CSS -->
+    <link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- THEME CSS -->
+    <link href="__PUBLIC__/css/essentials.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/color_scheme/green.css" rel="stylesheet" type="text/css" id="color_scheme" />
+    <!--雪花特效 START-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/snow-normalize.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/snow-default.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login/demo.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login/style1.css" />
+    <script type="text/javascript" src="__PUBLIC__/js/modernizr.custom.86080.js"></script>
+    <style type="text/css">
+        .fontstyle { color:#84C1FF;font-weight: bold;}
+        .snow-container{position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100001;}
+    </style>
+    <!--雪花特效 END-->
+
+</head>
+<!--
+    .boxed = boxed version
+-->
+<body>
+<block name="content"></block>
+<block name="js"></block>
+</body>
+</html>
