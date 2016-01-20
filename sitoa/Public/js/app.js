@@ -31,7 +31,7 @@
 
 		/*
 			add browser type to 'html'
-		*/	jQuery.browserDetect();
+		*/	//jQuery.browserDetect();
 
 		/*
 			fullscreen switcher 
