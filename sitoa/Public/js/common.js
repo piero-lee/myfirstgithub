@@ -576,16 +576,11 @@ function sendForm(formId, post_url, return_url) {
 				data : vars,
 				dataType : "json",
 				success : function(data) {
-                    alert(data.status);
-                    alert(data.info);
 					if (data.info) {
-						ui_alert(data.info, function() {
-							if (return_url) {
-								location.href = return_url;
-							}
-						});
+                        freshVerify();
+						_toastr(data.info,"top-center","error",false);
 					} else {
-						ui_error(data.info);
+						//ui_error(data.info);
 					}
 				}
 			});

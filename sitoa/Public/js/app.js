@@ -2021,7 +2021,7 @@
 
 					setTimeout(function(){
 						toastr[_notifyType](_message);
-					}, 1500); // delay 1.5s
+					}, 0); // delay 1.5s
 				}
 			});
 		
