@@ -2,7 +2,7 @@
 return array(
 	/* 认证相关 */
     'USER_AUTH_KEY'	=>'auth_id',	// 用户认证SESSION标记
-    'ADMIN_USER_LIST'	=>'admin',        
+    //'ADMIN_USER_LIST'	=>'admin',
     'USER_AUTH_GATEWAY'	=>'public/login',// 默认认证网关
 
     //URL模式

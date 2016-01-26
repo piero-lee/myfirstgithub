@@ -23,17 +23,24 @@ class PublicController extends Controller {
         }
     }
 
-    // 检测输入的验证码是否正确，$code为用户输入的验证码字符串
-    private function check_verify($code, $id = '') {
-        $verify = new \Think\Verify();
-        return $verify -> check($code, $id);
-    }
-
     // 登录检测
     public function check_login() {
-        $check = $this -> check_verify($_POST['verify'],'');
+        // 检验电子邮箱是否为空
+        if(empty($_POST['email'])){
+            $this->error(C('MSG_EMAIL_NULL'));
+        }
+        // 检验登录密码是否为空
+        if(empty($_POST['pwd'])){
+            $this -> error(C('MSG_PWD_NULL'));
+        }
+        // 检验验证码是否为空
+        if(empty($_POST['verify'])){
+            $this->error(C('MSG_VERIFY_NULL'));
+        }
+        // 检验验证码是否正确
+        $check = check_verify($_POST['verify'],'');
         if (!$check) {
-            $this -> error('验证码错误！');
+            $this -> error(C('MSG_VERIFY_CHECK'));
         }
     }
 

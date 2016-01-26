@@ -1,6 +1,6 @@
 <extend name="Layout/login_base" />
 <block name="content">
-    <input type="hidden" name="ajax" id="ajax" value="0">
+    <input type="hidden" name="ajax" id="ajax" value="1">
     <div class="snow-container"></div>
         <ul class="cb-slideshow">
             <li><span>Image 01</span><div><h3>ＷＥ·ＡＲＥ·伐木累！</h3></div></li>
@@ -21,7 +21,7 @@
 							<label class="label"><div class="fontstyle">您的邮箱</div></label>
 							<label class="input">
 								<i class="icon-append fa fa-envelope"></i>
-								<input type="email" style="BACKGROUND-COLOR: transparent;">
+								<input type="email" id="email" name="email" style="BACKGROUND-COLOR: transparent; color: #ffffff;">
 								<span class="tooltip tooltip-top-right">请输入您的电子邮箱</span>
 							</label>
 						</section>
@@ -29,7 +29,7 @@
 							<label class="label"><div class="fontstyle">密码</div></label>
 							<label class="input">
 								<i class="icon-append fa fa-lock"></i>
-								<input type="password" style="BACKGROUND-COLOR: transparent;">
+								<input type="password" id="pwd" name="pwd" style="BACKGROUND-COLOR: transparent; color: #ffffff;">
 								<b class="tooltip tooltip-top-right">请输入密码</b>
 							</label>
 						</section>
@@ -86,7 +86,6 @@
             });
         });
         function login() {
-            $("#ajax").val("1");
             sendForm("form_login", "{:U('public/check_login')}");
         }
 		function randomRange(t,i){return Math.random()*(i-t)+t}Particle3D=function(t){THREE.Particle.call(this,t),this.velocity=new THREE.Vector3(0,-2,0),this.velocity.rotateX(randomRange(-45,45)),this.velocity.rotateY(randomRange(0,360)),this.gravity=new THREE.Vector3(0,0,0),this.drag=1},Particle3D.prototype=new THREE.Particle,Particle3D.prototype.constructor=Particle3D,Particle3D.prototype.updatePhysics=function(){this.velocity.multiplyScalar(this.drag),this.velocity.addSelf(this.gravity),this.position.addSelf(this.velocity)};var TO_RADIANS=Math.PI/180;THREE.Vector3.prototype.rotateY=function(t){cosRY=Math.cos(t*TO_RADIANS),sinRY=Math.sin(t*TO_RADIANS);var i=this.z,o=this.x;this.x=o*cosRY+i*sinRY,this.z=o*-sinRY+i*cosRY},THREE.Vector3.prototype.rotateX=function(t){cosRY=Math.cos(t*TO_RADIANS),sinRY=Math.sin(t*TO_RADIANS);var i=this.z,o=this.y;this.y=o*cosRY+i*sinRY,this.z=o*-sinRY+i*cosRY},THREE.Vector3.prototype.rotateZ=function(t){cosRY=Math.cos(t*TO_RADIANS),sinRY=Math.sin(t*TO_RADIANS);var i=this.x,o=this.y;this.y=o*cosRY+i*sinRY,this.x=o*-sinRY+i*cosRY};
