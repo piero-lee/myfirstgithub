@@ -34,14 +34,48 @@ class PublicController extends Controller {
             $this -> error(C('MSG_PWD_NULL'));
         }
         // 检验验证码是否为空
-        if(empty($_POST['verify'])){
-            $this->error(C('MSG_VERIFY_NULL'));
-        }
+   //     if(empty($_POST['verify'])){
+   //         $this->error(C('MSG_VERIFY_NULL'));
+   //     }
         // 检验验证码是否正确
-        $check = check_verify($_POST['verify'],'');
-        if (!$check) {
-            $this -> error(C('MSG_VERIFY_CHECK'));
+  //      $check = check_verify($_POST['verify'],'');
+   //     if (!$check) {
+    //        $this -> error(C('MSG_VERIFY_CHECK'));
+    //    }
+
+        // 电子邮箱存在CHECK
+        $model = M("User");
+        $map = array();
+        $map['emp_no'] = $_POST['email'];
+        $map["is_del"] = array('eq', 0);
+        $email_info = $model -> where($map) -> find();
+        if(false == $email_info){
+            $this -> error(C('MSG_EMAIL_NOTEXISTED'));
         }
+
+        // 登录密码CHECK
+        $map['password']=array('eq',md5($_POST['pwd']));
+        $pwd_info = $model -> where($map) -> find();
+        if(false == $pwd_info){
+            $this -> error(C('MSG_PWD_ERROR'));
+        }
+
+        // 将用户的登录信息更新到USER表中
+        $User = M('User');
+        $ip = get_client_ip();
+        $time = time();
+        $data = array();
+        $data['id'] = $pwd_info['id'];
+        $data['last_login_time'] = $time;
+        $data['login_count'] = array('exp', 'login_count+1');
+        $data['last_login_ip'] = $ip;
+        $User -> save($data);
+
+        //SESSION中保存相应信息，用于画面跳转
+        session(C('USER_AUTH_KEY'), $pwd_info['id']);
+        // 画面跳转
+        $this -> assign('jumpUrl', U("Index/index"));
+        header('Location: ' . U("Index/index"));
     }
 
     /**生成验证码*/
